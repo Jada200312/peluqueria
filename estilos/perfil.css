@@ -1,0 +1,125 @@
+body {
+			background-color: #333;
+			color: #fff;
+		}
+		
+		.nav-wrapper {
+			background-color: #212121;
+		}
+		
+		.nav-wrapper a {
+			color: #fff;
+		}
+		
+		.footer-section {
+			background-color: #212121;
+			padding: 20px 0;
+			text-align: center;
+		}
+		
+		.footer-section p {
+			margin: 0;
+			color: #fff;
+		}
+	
+		.table-container {
+			margin-bottom: 60px;
+			padding-top: 60px;
+			position: relative;
+			max-width: 100%;
+		}
+		@media (max-width: 767px) {
+		.table-container {
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+		}
+	}
+	
+		.table-container table {
+			border-collapse: collapse;
+			width: 100%;
+			color: #fff;
+			background-color: #000;
+			min-height: 200px;
+		}
+	
+		.table-container table th,
+		.table-container table td {
+			padding: 12px 15px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+	
+		.table-container table th {
+			background-color: #212121;
+			color: #fff;
+			font-weight: bold;
+		}
+	
+		.table-container table tr:nth-child(even) {
+			background-color: #222;
+		}
+	
+		.table-container table tr.expired {
+			background-color: #aa5555;
+		}
+	
+
+		.table-container table tr.pending {
+			background-color: #55aa55;
+		}
+	
+		.table-container table tr.pending td {
+			font-weight: bold;
+		}
+
+		.user-data-container {
+			margin-bottom: 40px;
+			max-width: 400px;
+			margin: 0 auto;
+			text-align: center;
+			padding-top: 60px;
+		}
+
+		.user-data-container h2 {
+			color: #fff;
+		}
+
+		.user-data-container .user-data {
+			margin-bottom: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.user-data-container .user-data label {
+			width: 150px;
+			font-weight: bold;
+		}
+
+		.user-data-container .user-data span {
+			color: #fff;
+		}
+
+		.user-data-container .user-data .password {
+			font-family: monospace;
+		}
+
+		.user-data-container .edit-button {
+			margin-top: 20px;
+			background-color: #212121;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			font-size: 14px;
+			cursor: pointer;
+		}
+
+		.user-data-container .edit-button:hover {
+			background-color: #444;
+		}
+				.icon-container {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px; 
+}

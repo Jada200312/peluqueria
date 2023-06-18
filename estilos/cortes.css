@@ -1,0 +1,48 @@
+body {
+        background-color: #333;
+        color: #fff;
+      }
+      .nav-wrapper {
+        background-color: #212121;
+      }
+      .nav-wrapper a {
+        color: #fff;
+      }
+          .card-image {
+              height: 200px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+          }
+
+          .card-image img {
+              max-width: 100%;
+              max-height: 100%;
+          }
+          .card-action {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px;
+          background-color: #f1f1f1;
+      }
+
+      .card-action a {
+          text-decoration: none;
+          color: #333;
+          font-weight: bold;
+      }
+          .icon-container {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px; 
+  }
+   .footer-section {
+        background-color: #212121;
+        padding: 20px 0;
+        text-align: center;
+      }
+      .footer-section p {
+        margin: 0;
+        color: #fff;
+      }
