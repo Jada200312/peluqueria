@@ -7,6 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST["id"];
     $nombre = $_POST["nombre"];
     $precio = $_POST["precio"];
+    $idca = $_POST["idca"];
 
     
     if (isset($_FILES["imagen"]) && $_FILES["imagen"]["error"] == UPLOAD_ERR_OK) {
@@ -30,8 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
  
    
-    $sql = "INSERT INTO cortes (id, nombre, precio, imagen)
-            VALUES ('$id', '$nombre', '$precio', '$nombreImagen')";
+    $sql = "INSERT INTO cortes (id, nombre, precio, imagen,id_categoria)
+            VALUES ('$id', '$nombre', '$precio', '$nombreImagen','$idca')";
     $result=mysqli_query($conexion,$sql);
     
     if ($result) {

@@ -5,6 +5,12 @@ include('conexion.php');
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
   $id = $_GET['id'];
 
+   // Preparar la consulta para eliminar la reserva en la tabla "horarios"
+  $sql3 = "DELETE FROM servicios_reserva WHERE id_reserva = ?";
+  $stmt3 = mysqli_prepare($conexion, $sql3);
+  mysqli_stmt_bind_param($stmt3, "i", $id);
+  $query3 = mysqli_stmt_execute($stmt3);
+
   // Preparar la consulta para eliminar la reserva en la tabla "historial_reservas"
   $sql = "DELETE FROM historial_reservas WHERE id = ?";
   $stmt = mysqli_prepare($conexion, $sql);
@@ -16,6 +22,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
   $stmt2 = mysqli_prepare($conexion, $sql2);
   mysqli_stmt_bind_param($stmt2, "i", $id);
   $query2 = mysqli_stmt_execute($stmt2);
+
 
   // Verificar si las consultas se ejecutaron correctamente
   if ($query && $query2) {

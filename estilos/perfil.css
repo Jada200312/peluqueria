@@ -11,16 +11,15 @@ body {
 			color: #fff;
 		}
 		
-		.footer-section {
-			background-color: #212121;
-			padding: 20px 0;
-			text-align: center;
-		}
-		
-		.footer-section p {
-			margin: 0;
-			color: #fff;
-		}
+    .page-footer {
+      background-color: #212121;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .page-footer p {
+      margin: 0;
+      color: #fff;
+    }
 	
 		.table-container {
 			margin-bottom: 60px;
@@ -122,4 +121,23 @@ body {
 	display: inline-block;
 	vertical-align: middle;
 	margin-right: 5px; 
+}
+
+#mobile-nav {
+  background-color: rgba(0, 0, 0, 0.8); /* Opacidad del fondo */
+  color: #fff; /* Color del texto */
+  padding: 20px; /* Espaciado interno */
+  margin-left: -40px; /* Margen izquierdo negativo */
+}
+
+#mobile-nav li {
+  margin-bottom: 10px; /* Espaciado entre elementos */
+}
+
+#mobile-nav li a {
+  color: #fff; /* Color de los enlaces */
+}
+
+#mobile-nav .username {
+  font-weight: bold; /* Estilo del nombre de usuario */
 }

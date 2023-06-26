@@ -4,7 +4,7 @@ $isLoggedIn = isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] === true
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <title>Página Principal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="estilos/estilos.css">
   <link rel="stylesheet" type="text/css" href="estilos/principal.css">
+  <meta charset="UTF-8">
 </head>
 <body>
 <nav>
@@ -22,12 +23,14 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
       <?php if ($isLoggedIn) { ?>
         <li><a href="index.php"><span class="icon-container"><i class="material-icons">home</i></span>Inicio</a></li>
         <li><a href="cortes.php"><span class="icon-container"><i class="material-icons">grade</i></span>Cortes</a></li>
-        <li><a href="perfil.php"><span class="icon-container"><i class="material-icons">account_circle</i></span>Perfil</a></li>
-        <li><a href="salir.php"><span class="icon-container"><i class="material-icons">logout</i></span>Cerrar sesión</a></li>
-        <ul class='brand-logo center yellow-text'>
-          <!-- Dropdown Trigger -->
-          <li><span class="username center-align">¡Hola, <?php echo $username; ?>!</span></li>
-        </ul>
+        <li><a href="agendacion.php"><span class="icon-container"><i class="material-icons">date_range</i></span>Agendar</a></li>
+        <li>
+          <a class="dropdown-trigger" href="#dropdown-menu" data-target="dropdown-menu">
+            <span class="icon-container"><i class="material-icons">person</i></span>
+            <?php echo $username; ?>
+            <i class="material-icons right">arrow_drop_down</i>
+          </a>
+        </li>
       <?php } else { ?>
         <li><a href="index.php"><span class="icon-container"><i class="material-icons">home</i></span>Inicio</a></li>
         <li><a href="cortes.php"><span class="icon-container"><i class="material-icons">grade</i></span>Cortes</a></li>
@@ -37,22 +40,30 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
   </div>
 </nav>
 
+<!-- Dropdown Structure -->
+<ul id="dropdown-menu" class="dropdown-content" style="background-color: black;">
+ <li><a href="perfil.php" class="white-text"><span class="icon-container"><i class="material-icons">account_circle</i></span>Perfil</a></li>
+    <li><a href="salir.php" class="white-text"><span class="icon-container"><i class="material-icons">logout</i></span>Cerrar sesión</a></li>
+</ul>
+
 <ul class="sidenav" id="mobile-nav">
   <?php if ($isLoggedIn) { ?>
-    <li><a href="index.php"><span class="icon-container"><i class="material-icons">home</i></span>Inicio</a></li>
-    <li><a href="cortes.php"><span class="icon-container"><i class="material-icons">grade</i></span>Cortes</a></li>
-    <li><a href="perfil.php"><span class="icon-container"><i class="material-icons">account_circle</i></span>Perfil</a></li>
-    <li><a href="salir.php"><span class="icon-container"><i class="material-icons">logout</i></span>Cerrar sesión</a></li>
-     <ul class='brand-logo center red-text' style="font-weight: bold;">
+    <ul class='brand-logo center red-text' style="font-weight: bold;">
           <!-- Dropdown Trigger -->
           <li><span class="username center-align">¡Hola, <?php echo $username; ?>!</span></li>
         </ul>
+    <li><a href="index.php"><span class="icon-container"><i class="material-icons">home</i></span>Inicio</a></li>
+    <li><a href="cortes.php"><span class="icon-container"><i class="material-icons">grade</i></span>Cortes</a></li>
+    <li><a href="agendacion.php"><span class="icon-container"><i class="material-icons">date_range</i></span>Agendar</a></li>
+    <li><a href="perfil.php"><span class="icon-container"><i class="material-icons">account_circle</i></span>Perfil</a></li>
+    <li><a href="salir.php"><span class="icon-container"><i class="material-icons">logout</i></span>Cerrar sesión</a></li>
   <?php } else { ?>
     <li><a href="index.php"><span class="icon-container"><i class="material-icons">home</i></span>Inicio</a></li>
     <li><a href="cortes.php"><span class="icon-container"><i class="material-icons">grade</i></span>Cortes</a></li>
     <li><a href="login.php"><span class="icon-container"><i class="material-icons">login</i></span>Iniciar sesión</a></li>
   <?php } ?>
 </ul>
+
 
   <div class="carousel">
     <a class="carousel-item" href="#one!"><img src="https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2022/05/19/16529549296005.jpg"></a>
@@ -67,7 +78,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
         <p>Agenda tu turno en la peluquería y obtén un nuevo look espectacular. Elige entre los próximos 7 días para encontrar la fecha perfecta que se adapte a tu agenda.  ¡Agenda tu cita ahora!</p>
         <?php if ($isLoggedIn) { ?>
           <a href="agendacion.php" class="btn waves-effect waves-light"><span class="material-icons">
-calendar_today
+date_range
 </span> Agendar</a>
         <?php } else { ?>
           <a href="login.php" class="btn waves-effect waves-light">Iniciar sesión</a>
@@ -145,12 +156,19 @@ calendar_today
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
 $(document).ready(function() {
+  var dropdowns = document.querySelectorAll('.dropdown-trigger');
+    var options = {
+      alignment: 'right',
+      coverTrigger: false
+    };
+    M.Dropdown.init(dropdowns, options);
   $('#preloader').fadeOut('fast', function() {
     $(this).remove();
   });
 
   $('.sidenav').sidenav();
   $('.carousel').carousel();
+
 });
 
   </script>

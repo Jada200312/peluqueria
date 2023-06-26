@@ -57,6 +57,15 @@
       height: 200px;
       margin-bottom: 40px;
     }
+        .page-footer {
+      background-color: #212121;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .page-footer p {
+      margin: 0;
+      color: #fff;
+    }
 
     .carousel-item {
       display: flex;
@@ -90,3 +99,27 @@
 .card-day {
   text-transform: capitalize;
 }
+
+#mobile-nav {
+  background-color: rgba(0, 0, 0, 0.8); /* Opacidad del fondo */
+  color: #fff; /* Color del texto */
+  padding: 20px; /* Espaciado interno */
+  margin-left: -40px; /* Margen izquierdo negativo */
+}
+
+#mobile-nav li {
+  margin-bottom: 10px; /* Espaciado entre elementos */
+}
+
+#mobile-nav li a {
+  color: #fff; /* Color de los enlaces */
+}
+
+#mobile-nav .username {
+  font-weight: bold; /* Estilo del nombre de usuario */
+}
+
+
+
+
+

@@ -29,7 +29,12 @@
                 <div class="file-path-wrapper">
                     <input class="file-path validate" type="text">
                 </div>
+                <div class="input-field">
+                <input type="text" id="idca" name="idca" required>
+                <label for="idca">ID</label>
             </div>
+            </div>
+
             <button class="btn waves-effect waves-light" type="submit">Enviar</button>
         </form>
     </div>
